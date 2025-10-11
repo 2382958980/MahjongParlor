@@ -1,0 +1,41 @@
+package com.candle.mahjongparlor.item;
+
+import com.candle.mahjongparlor.MahjongParlor;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import static com.candle.mahjongparlor.block.ModBlocks.ENHANCED_SCAFFOLDING;
+
+
+public class ModItems {
+    public static final DeferredRegister<Item> ITEMS =
+            DeferredRegister.create(ForgeRegistries.ITEMS, MahjongParlor.MOD_ID);
+
+    public static final RegistryObject<Item> CUCUMBER =
+            ITEMS.register("cucumber", () -> new CucumberItem(
+                    new Item.Properties().food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).build()),
+                    2.0F
+            ));
+    public  static final RegistryObject<Item> WATERBOWL =
+            ITEMS.register("waterbowl", () ->new Item(new Item.Properties().stacksTo(1)));
+    public  static final RegistryObject<Item> CHICKENSOUP =
+            ITEMS.register("chickensoup", () ->new Item(new Item.Properties().stacksTo(1).food(stew(7).build())));
+    public static final RegistryObject<Item> ENHANCED_SCAFFOLDING_ITEM = ITEMS.register("enhanced_scaffolding",
+            () -> new EnhancedScaffoldingBlockItem(
+                    ENHANCED_SCAFFOLDING.get(),
+                    new Item.Properties()
+            )
+    );
+
+    private static FoodProperties.Builder stew(int pNutrition) {
+        return (new FoodProperties.Builder()).nutrition(pNutrition).saturationMod(0.6F);
+    }
+    public static void register(IEventBus eventBus){
+        ITEMS.register(eventBus);
+    }
+}

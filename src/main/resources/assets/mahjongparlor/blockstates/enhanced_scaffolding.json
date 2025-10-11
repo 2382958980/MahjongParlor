@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bottom=false": {
+      "model": "mahjongparlor:block/enhanced_scaffolding_stable"
+    },
+    "bottom=true": {
+      "model": "mahjongparlor:block/enhanced_scaffolding_unstable"
+    }
+  }
+}
