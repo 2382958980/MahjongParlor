@@ -21,14 +21,16 @@ public class ModBlocks {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-
+    //增强型脚手架
     public static final RegistryObject<Block> ENHANCED_SCAFFOLDING = BLOCKS.register("enhanced_scaffolding",
             () -> new EnhancedScaffoldingBlock(
                     BlockBehaviour.Properties.copy(Blocks.SCAFFOLDING)
                             .strength(1.0F, 3600000.0F)
             )
     );
-
+    //岩浆水槽(?
+    public static final RegistryObject<Block> LAVA_SINK_BLOCK =
+            registerBlock("lava_sink_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 3.0F)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> blocks = BLOCKS.register(name,block);

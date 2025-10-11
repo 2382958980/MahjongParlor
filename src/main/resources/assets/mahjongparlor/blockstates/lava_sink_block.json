@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mahjongparlor:block/lava_sink_block"
+    }
+  }
+}
