@@ -1,5 +1,7 @@
 # MahjongParlor·麻将馆
-![Minecraft](https://img.shields.io/badge/Minecraft-Java%20Edition-brightgreen)  ![Forge](https://img.shields.io/badge/Forge-1.20.1-orange)
+![Minecraft](https://img.shields.io/badge/Minecraft-Java%20Edition-brightgreen)
+![Forge](https://img.shields.io/badge/Forge-1.20.1-orange)
+
 **Q:此模组的来源?**
 **A:此模组是专门为麻将馆服务器所提供的额外内容扩展。**
 
