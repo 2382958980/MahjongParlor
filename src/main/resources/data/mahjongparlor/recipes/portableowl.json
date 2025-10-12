@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NSN",
+    "   "
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:white_wool"
+    },
+    "S": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "mahjongparlor:portableowl",
+    "count": 1
+  }
+}

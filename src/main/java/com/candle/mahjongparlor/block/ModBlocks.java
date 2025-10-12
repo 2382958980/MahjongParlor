@@ -28,7 +28,7 @@ public class ModBlocks {
                             .strength(1.0F, 3600000.0F)
             )
     );
-
+    public static final RegistryObject<Block> PORTABLEOWL = registerBlock("portableowl",() -> new portableowlBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> blocks = BLOCKS.register(name,block);

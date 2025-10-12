@@ -71,6 +71,7 @@ public class MahjongParlor
         }
         else if(event.getTabKey()==CreativeModeTabs.FUNCTIONAL_BLOCKS){
             event.accept(ModItems.ENHANCED_SCAFFOLDING_ITEM);
+            event.accept(ModBlocks.PORTABLEOWL.get());
         }
     }
 
