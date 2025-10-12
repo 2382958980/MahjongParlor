@@ -1,10 +1,13 @@
 package com.candle.mahjongparlor.block;
 
+import com.candle.mahjongparlor.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -20,11 +23,14 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class EnhancedScaffoldingBlock extends Block implements SimpleWaterloggedBlock {
@@ -34,15 +40,15 @@ public class EnhancedScaffoldingBlock extends Block implements SimpleWaterlogged
     private static final VoxelShape UNSTABLE_SHAPE_BOTTOM = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
     private static final VoxelShape BELOW_BLOCK = Shapes.block().move(0.0D, -1.0D, 0.0D);
 
-    public static final int STABILITY_MAX_DISTANCE = 999;
-    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 0, 999);
+    public static final int STABILITY_MAX_DISTANCE = 199;
+    public static final IntegerProperty DISTANCE = IntegerProperty.create("distance", 0, 199);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final BooleanProperty BOTTOM = BlockStateProperties.BOTTOM;
 
     public EnhancedScaffoldingBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(DISTANCE, 999)
+                .setValue(DISTANCE, 199)
                 .setValue(WATERLOGGED, Boolean.FALSE)
                 .setValue(BOTTOM, Boolean.FALSE));
     }
@@ -58,7 +64,6 @@ public class EnhancedScaffoldingBlock extends Block implements SimpleWaterlogged
             return Shapes.block();
         }
     }
-
     public VoxelShape getInteractionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
         return Shapes.block();
     }
@@ -100,8 +105,8 @@ public class EnhancedScaffoldingBlock extends Block implements SimpleWaterlogged
         BlockState blockstate = pState.setValue(DISTANCE, i)
                 .setValue(BOTTOM, this.isBottom(pLevel, pPos, i));
 
-        if (blockstate.getValue(DISTANCE) == 999) {
-            if (pState.getValue(DISTANCE) == 999) {
+        if (blockstate.getValue(DISTANCE) == 199) {
+            if (pState.getValue(DISTANCE) == 199) {
                 FallingBlockEntity.fall(pLevel, pPos, blockstate);
             } else {
                 pLevel.destroyBlock(pPos, true);
@@ -112,7 +117,7 @@ public class EnhancedScaffoldingBlock extends Block implements SimpleWaterlogged
     }
 
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-        return getDistance(pLevel, pPos) < 999;
+        return getDistance(pLevel, pPos) < 199;
     }
 
     public VoxelShape getCollisionShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
@@ -148,7 +153,7 @@ public class EnhancedScaffoldingBlock extends Block implements SimpleWaterlogged
         BlockPos.MutableBlockPos blockpos$mutableblockpos = pPos.mutable().move(Direction.DOWN);
         BlockState blockstate = pLevel.getBlockState(blockpos$mutableblockpos);
 
-        int i = 999;
+        int i = 199;
 
         if (blockstate.getBlock() instanceof EnhancedScaffoldingBlock) {
             i = blockstate.getValue(DISTANCE);
@@ -171,7 +176,7 @@ public class EnhancedScaffoldingBlock extends Block implements SimpleWaterlogged
 
     private static int getDistanceDeep(BlockGetter pLevel, BlockPos pPos, int depth, Set<BlockPos> visited) {
         if (depth > 100 || visited.contains(pPos)) {
-            return 999;
+            return 199;
         }
 
         visited.add(pPos.immutable());
@@ -183,11 +188,11 @@ public class EnhancedScaffoldingBlock extends Block implements SimpleWaterlogged
             return 0;
         }
 
-        int minDistance = 999;
+        int minDistance = 199;
 
         if (blockstate.getBlock() instanceof EnhancedScaffoldingBlock) {
             int belowDistance = getDistanceDeep(pLevel, below, depth + 1, visited);
-            if (belowDistance < 999) {
+            if (belowDistance < 199) {
                 minDistance = belowDistance;
             }
         }
@@ -202,7 +207,7 @@ public class EnhancedScaffoldingBlock extends Block implements SimpleWaterlogged
                 Set<BlockPos> branchVisited = new HashSet<>(visited);
                 int neighborDistance = getDistanceDeep(pLevel, neighborPos, depth + 1, branchVisited);
 
-                if (neighborDistance < 998) {
+                if (neighborDistance < 198) {
                     minDistance = Math.min(minDistance, neighborDistance + 1);
                     if (minDistance == 1) {
                         break;

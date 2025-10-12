@@ -25,9 +25,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> ENHANCED_SCAFFOLDING = BLOCKS.register("enhanced_scaffolding",
             () -> new EnhancedScaffoldingBlock(
                     BlockBehaviour.Properties.copy(Blocks.SCAFFOLDING)
-                            .strength(1.0F, 3600000.0F)
+                            .strength(0.6F, 3600000.0F)
             )
     );
+    //便携式猫头鹰
+    public static final RegistryObject<Block> PORTABLEOWL =
+            registerBlock("portableowl", () -> new portableowlBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+
     //岩浆水槽(?
     public static final RegistryObject<Block> LAVA_SINK_BLOCK =
             registerBlock("lava_sink_block", () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 3.0F)));
