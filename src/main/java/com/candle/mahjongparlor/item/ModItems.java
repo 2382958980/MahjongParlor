@@ -15,22 +15,28 @@ import static com.candle.mahjongparlor.block.ModBlocks.ENHANCED_SCAFFOLDING;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MahjongParlor.MOD_ID);
-
+    //黄瓜
     public static final RegistryObject<Item> CUCUMBER =
             ITEMS.register("cucumber", () -> new CucumberItem(
                     new Item.Properties().food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.2F).build()),
                     2.0F
             ));
+    //
     public  static final RegistryObject<Item> WATERBOWL =
             ITEMS.register("waterbowl", () ->new Item(new Item.Properties().stacksTo(1)));
+    //鸡汁汤
     public  static final RegistryObject<Item> CHICKENSOUP =
             ITEMS.register("chickensoup", () ->new Item(new Item.Properties().stacksTo(1).food(stew(7).build())));
+    //增强型脚手架
     public static final RegistryObject<Item> ENHANCED_SCAFFOLDING_ITEM = ITEMS.register("enhanced_scaffolding",
             () -> new EnhancedScaffoldingBlockItem(
                     ENHANCED_SCAFFOLDING.get(),
                     new Item.Properties()
             )
     );
+    //地瓜
+    public static final RegistryObject<Item>  PACHYRHIZUS =
+            ITEMS.register("pachyrhizus",() -> new Item(new Item.Properties().stacksTo(64).food(stew(2).build())));
 
     private static FoodProperties.Builder stew(int pNutrition) {
         return (new FoodProperties.Builder()).nutrition(pNutrition).saturationMod(0.6F);

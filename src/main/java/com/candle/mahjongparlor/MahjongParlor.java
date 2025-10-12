@@ -62,14 +62,7 @@ public class MahjongParlor
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey()== CreativeModeTabs.FOOD_AND_DRINKS){
-            event.accept(ModItems.WATERBOWL);
-            event.accept(ModItems.CHICKENSOUP);
-        }
-        else if(event.getTabKey()==CreativeModeTabs.FUNCTIONAL_BLOCKS){
-            event.accept(ModItems.ENHANCED_SCAFFOLDING_ITEM);
-            event.accept(ModBlocks.PORTABLEOWL.get());
-        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
