@@ -1,11 +1,10 @@
 package com.candle.mahjongparlor;
 
 import com.candle.mahjongparlor.block.ModBlocks;
+import com.candle.mahjongparlor.item.ModCreativeModeTabs;
 import com.candle.mahjongparlor.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -21,8 +20,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
-
-import static com.candle.mahjongparlor.block.ModBlocks.ENHANCED_SCAFFOLDING;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MahjongParlor.MOD_ID)
@@ -41,6 +38,7 @@ public class MahjongParlor
         modEventBus.addListener(this::commonSetup);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -65,7 +63,6 @@ public class MahjongParlor
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey()== CreativeModeTabs.FOOD_AND_DRINKS){
-            event.accept(ModItems.CUCUMBER);
             event.accept(ModItems.WATERBOWL);
             event.accept(ModItems.CHICKENSOUP);
         }

@@ -3,5 +3,8 @@
   "item.mahjongparlor.waterbowl": "水碗",
   "item.mahjongparlor.chickensoup": "鸡汁",
   "block.mahjongparlor.enhanced_scaffolding": "加固脚手架",
-  "block.mahjongparlor.portableowl": "便携式猫头鹰"
+  "block.mahjongparlor.portableowl": "便携式猫头鹰",
+  "block.mahjongparlor.enhanced_scaffolding": "加固脚手架",
+  "block.mahjongparlor.lava_sink_block": "岩浆水槽",
+  "itemGroup.mg_tab": "麻将馆"
 }
