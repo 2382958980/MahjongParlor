@@ -3,6 +3,7 @@ package com.candle.mahjongparlor;
 import com.candle.mahjongparlor.block.ModBlocks;
 import com.candle.mahjongparlor.item.ModCreativeModeTabs;
 import com.candle.mahjongparlor.item.ModItems;
+import com.candle.mahjongparlor.loot.ModLootModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -39,6 +40,8 @@ public class MahjongParlor
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
+        // 注册Loot Modifiers
+        ModLootModifiers.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
