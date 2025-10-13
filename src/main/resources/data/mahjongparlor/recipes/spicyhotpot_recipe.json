@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "mahjongparlor:ironbasin" },
+    { "item": "minecraft:cooked_beef" },
+    { "item": "minecraft:wheat" },
+    { "tag": "minecraft:fishes" },
+    { "item": "minecraft:beetroot" }
+  ],
+  "result": {
+    "item": "mahjongparlor:spicyhotpot",
+    "count": 1
+  }
+}

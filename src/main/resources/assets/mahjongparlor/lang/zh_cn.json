@@ -6,7 +6,8 @@
   "block.mahjongparlor.portableowl": "便携式猫头鹰",
   "block.mahjongparlor.lava_sink_block": "岩浆水槽",
   "itemGroup.mg_block_tab": "麻将馆-方块",
-  "itemGroup.mg_food_tab": "麻将馆-食物",
-  "item.mahjongparlor.pachyrhizus": "地瓜"
-
+  "itemGroup.mg_food_tab": "麻将馆-物品",
+  "item.mahjongparlor.pachyrhizus": "地瓜",
+  "item.mahjongparlor.ironbasin": "铁盆",
+  "item.mahjongparlor.spicyhotpot": "麻辣香锅"
 }

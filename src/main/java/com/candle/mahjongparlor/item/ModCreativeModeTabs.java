@@ -21,6 +21,7 @@ public class ModCreativeModeTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.LAVA_SINK_BLOCK.get());
                         pOutput.accept(ModBlocks.ENHANCED_SCAFFOLDING.get());
+                        pOutput.accept(ModBlocks.PORTABLEOWL.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> MG_FOOD_TAB =
@@ -28,10 +29,12 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModItems.CUCUMBER.get()))
                     .title(Component.translatable("itemGroup.mg_food_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.WATERBOWL.get());
+                        pOutput.accept(ModItems.IRONBASIN.get());
                         pOutput.accept(ModItems.CUCUMBER.get());
                         pOutput.accept(ModItems.PACHYRHIZUS.get());
-                        pOutput.accept(ModItems.WATERBOWL.get());
                         pOutput.accept(ModItems.CHICKENSOUP.get());
+                        pOutput.accept(ModItems.SPICYHOTPOT.get());
                     })
                     .build());
 
