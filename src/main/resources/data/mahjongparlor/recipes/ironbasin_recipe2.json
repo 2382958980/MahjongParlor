@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "N N",
+    " S ",
+    "   "
+  ],
+  "key": {
+    "N": { "item": "minecraft:iron_nugget" },
+    "S": { "item": "minecraft:iron_ingot" }
+  },
+  "result": { "item": "mahjongparlor:ironbasin", "count": 1 }
+}

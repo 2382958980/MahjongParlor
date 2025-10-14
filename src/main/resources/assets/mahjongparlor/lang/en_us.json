@@ -7,7 +7,9 @@
   "block.mahjongparlor.portableowl": "portable owl",
   "itemGroup.mg_block_tab": "mg_block",
   "itemGroup.mg_food_tab": "mg_food",
-  "item.mahjongparlor.pachyrhizus": "pachyrhizus"
+  "item.mahjongparlor.pachyrhizus": "pachyrhizus",
+  "item.mahjongparlor.ironbasin": "iron basin",
+  "item.mahjongparlor.spicyhotpot": "spicy hot pot"
 
 
 }
