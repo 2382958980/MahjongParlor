@@ -9,7 +9,8 @@
   "itemGroup.mg_food_tab": "mg_food",
   "item.mahjongparlor.pachyrhizus": "pachyrhizus",
   "item.mahjongparlor.ironbasin": "iron basin",
-  "item.mahjongparlor.spicyhotpot": "spicy hot pot"
-
-
+  "item.mahjongparlor.spicyhotpot": "spicy hot pot",
+  "item.mahjongparlor.eternalglory": "§leternal glory",
+  "item.mahjongparlor.eternalglorysword": "§leternal glory sword",
+  "item.mahjongparlor.glorymodel": "eternal glory upgrade smithing template"
 }
