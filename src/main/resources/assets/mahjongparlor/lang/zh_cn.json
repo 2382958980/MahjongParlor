@@ -9,5 +9,8 @@
   "itemGroup.mg_food_tab": "麻将馆-物品",
   "item.mahjongparlor.pachyrhizus": "地瓜",
   "item.mahjongparlor.ironbasin": "铁盆",
-  "item.mahjongparlor.spicyhotpot": "麻辣香锅"
+  "item.mahjongparlor.spicyhotpot": "麻辣香锅",
+  "item.mahjongparlor.eternalglory": "§l永曜之魂",
+  "item.mahjongparlor.eternalglorysword": "§l永曜之刃",
+  "item.mahjongparlor.glorymodel": "永曜锻造模板"
 }

@@ -5,8 +5,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.BowlFoodItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -35,6 +34,13 @@ public class ModItems {
             ITEMS.register("ironbasin", () ->new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SPICYHOTPOT =
             ITEMS.register("spicyhotpot", () ->new BasinFoodItem(new Item.Properties().stacksTo(1).food(stew(10).effect(() -> new MobEffectInstance(MobEffects.SATURATION, 20, 0), 1.0f).build())));
+    public static final RegistryObject<Item> ETERNALGLORY =
+            ITEMS.register("eternalglory", ()->new SimpleFoiledItem((new Item.Properties()).rarity(Rarity.EPIC).fireResistant()));
+    public static final RegistryObject<Item> ETERNALGLORYSWORD =
+            ITEMS.register("eternalglorysword", EternalGlorySword::new);
+    public static final RegistryObject<Item> GLORYMODEL=
+            ITEMS.register("glorymodel", ()->new Item((new Item.Properties()).rarity(Rarity.UNCOMMON).fireResistant()));
+
 
     //增强型脚手架
     public static final RegistryObject<Item> ENHANCED_SCAFFOLDING_ITEM = ITEMS.register("enhanced_scaffolding",

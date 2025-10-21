@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "mahjongparklor:glorymodel"
+  },
+  "base": {
+    "item": "minecraft:netherite_sword"
+  },
+  "addition": {
+    "item": "mahjongparlor:eternalglory"
+  },
+  "result": {
+    "item": "mahjongparlor:eternalglorysword"
+  }
+}

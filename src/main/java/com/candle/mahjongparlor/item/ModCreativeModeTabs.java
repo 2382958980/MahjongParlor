@@ -29,6 +29,9 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModItems.CUCUMBER.get()))
                     .title(Component.translatable("itemGroup.mg_food_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.ETERNALGLORY.get());
+                        pOutput.accept(ModItems.GLORYMODEL.get());
+                        pOutput.accept(ModItems.ETERNALGLORYSWORD.get());
                         pOutput.accept(ModItems.WATERBOWL.get());
                         pOutput.accept(ModItems.IRONBASIN.get());
                         pOutput.accept(ModItems.CUCUMBER.get());
