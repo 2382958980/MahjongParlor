@@ -74,13 +74,13 @@ public class LightningHandlers {
                     oldItemEntity.discard();
 
                     // c. 【关键检查】获取你的自定义物品。这是最容易出错的地方！
-                    ItemStack newStack = new ItemStack(Items.DIAMOND, count);
+                    ItemStack newStack = new ItemStack(ModItems.ETERNALGLORY.get(), count);
                     ItemEntity newItemEntity = new ItemEntity(level, itemPos.x, itemPos.y, itemPos.z, newStack);
 
                     // e. 设置新物品实体的属性
                     newItemEntity.setPickUpDelay(10); // 短暂的拾取延迟，防止被瞬间吸走
                     newItemEntity.setUnlimitedLifetime(); // 设置为永不消失
-
+                    newItemEntity.setInvulnerable(true);//物品不会因为雷击等伤害消失
                     // f. 将新的物品实体添加到世界中
                     level.addFreshEntity(newItemEntity);
 
