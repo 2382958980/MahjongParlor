@@ -74,7 +74,7 @@ public class LightningHandlers {
                     oldItemEntity.discard();
 
                     // c. 【关键检查】获取你的自定义物品。这是最容易出错的地方！
-                    ItemStack newStack = new ItemStack(ModItems.ETERNALGLORY.get(), count);
+                    ItemStack newStack = new ItemStack(ModItems.GLORYMODEL.get(), count);
                     ItemEntity newItemEntity = new ItemEntity(level, itemPos.x, itemPos.y, itemPos.z, newStack);
 
                     // e. 设置新物品实体的属性
@@ -88,9 +88,6 @@ public class LightningHandlers {
                     level.sendParticles(ParticleTypes.FLASH, itemPos.x, itemPos.y + 0.5, itemPos.z, 3, 0, 0, 0, 0);
                     level.sendParticles(ParticleTypes.ELECTRIC_SPARK, itemPos.x, itemPos.y + 0.5, itemPos.z, 50, 0.4, 0.4, 0.4, 0.2);
                     level.playSound(null, itemPos.x, itemPos.y, itemPos.z, SoundEvents.TOTEM_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
-
-                    LOGGER.info("Successfully transformed a Netherite Upgrade into a Glory Model at " + itemPos);
-
                     // h. 转化成功后，用 break 跳出循环。这可以防止一道闪电同时转化多个物品堆叠，让行为更可预测。
                     break;
                 }
