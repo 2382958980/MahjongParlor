@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": { "item": "mahjongparlor:pachyrhizus" },
+  "result": "mahjongparlor:cookedpachyrhizus",
+  "experience": 0.35,
+  "cookingtime": 100
+}

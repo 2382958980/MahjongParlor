@@ -23,13 +23,6 @@ import java.util.List;
 @Mod.EventBusSubscriber(modid = "mahjongparlor")
 public class LightningHandlers {
 
-    // 为该类创建一个 Logger 实例，用于在后台打印调试信息
-    private static final Logger LOGGER = LogManager.getLogger();
-
-    /**
-     * 当实体加入世界时触发。我们用它来检测闪电的生成。
-     * 这个方法是“即时”的，避免了所有延迟任务带来的问题。
-     */
     @SubscribeEvent
     public static void onLightningStrikeTransform(EntityJoinLevelEvent event) {
         // 1. 前置检查 (Guard Clauses)
@@ -45,40 +38,29 @@ public class LightningHandlers {
             return;
         }
 
-        // 2. 核心逻辑
-        // ----------------------------------------------------
-
         ServerLevel level = (ServerLevel) event.getLevel();
         Vec3 lightningPos = event.getEntity().position();
 
-        // 定义一个以闪电为中心，半径为4的搜索区域
         AABB searchBox = new AABB(lightningPos, lightningPos).inflate(4.0);
 
-        // 获取该区域内所有的“物品实体”(ItemEntity)
         List<ItemEntity> nearbyItems = level.getEntitiesOfClass(ItemEntity.class, searchBox);
 
         for (ItemEntity oldItemEntity : nearbyItems) {
             // 检查这个物品实体是否是我们想要转化的目标
             if (oldItemEntity.getItem().getItem() == Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE) {
 
-                // 再次精确检查距离，确保在3格以内
                 if (oldItemEntity.position().distanceTo(lightningPos) <= 3.0) {
 
-                    // --- 开始转化过程 ---
-
-                    // a. 从旧物品中获取关键信息（数量和精确位置）
                     int count = oldItemEntity.getItem().getCount();
                     Vec3 itemPos = oldItemEntity.position();
 
-                    // b. 立即销毁旧的物品实体，防止物品重复
                     oldItemEntity.discard();
 
-                    // c. 【关键检查】获取你的自定义物品。这是最容易出错的地方！
                     ItemStack newStack = new ItemStack(ModItems.GLORYMODEL.get(), count);
                     ItemEntity newItemEntity = new ItemEntity(level, itemPos.x, itemPos.y, itemPos.z, newStack);
 
                     // e. 设置新物品实体的属性
-                    newItemEntity.setPickUpDelay(10); // 短暂的拾取延迟，防止被瞬间吸走
+                    newItemEntity.setPickUpDelay(20); // 短暂的拾取延迟，防止被瞬间吸走
                     newItemEntity.setUnlimitedLifetime(); // 设置为永不消失
                     newItemEntity.setInvulnerable(true);//物品不会因为雷击等伤害消失
                     // f. 将新的物品实体添加到世界中
@@ -88,7 +70,6 @@ public class LightningHandlers {
                     level.sendParticles(ParticleTypes.FLASH, itemPos.x, itemPos.y + 0.5, itemPos.z, 3, 0, 0, 0, 0);
                     level.sendParticles(ParticleTypes.ELECTRIC_SPARK, itemPos.x, itemPos.y + 0.5, itemPos.z, 50, 0.4, 0.4, 0.4, 0.2);
                     level.playSound(null, itemPos.x, itemPos.y, itemPos.z, SoundEvents.TOTEM_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                    // h. 转化成功后，用 break 跳出循环。这可以防止一道闪电同时转化多个物品堆叠，让行为更可预测。
                     break;
                 }
             }

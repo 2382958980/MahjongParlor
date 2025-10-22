@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": { "item": "mahjongparlor:pachyrhizus" },
+  "result": "mahjongparlor:cookedpachyrhizus",
+  "experience": 0.35,
+  "cookingtime": 600
+}

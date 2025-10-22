@@ -2,6 +2,7 @@ package com.candle.mahjongparlor.item;
 
 import com.candle.mahjongparlor.MahjongParlor;
 import com.candle.mahjongparlor.block.ModBlocks;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -43,9 +44,16 @@ public class ModItems {
     public static final RegistryObject<Item> ETERNALGLORYSWORD =
             ITEMS.register("eternalglorysword", EternalGlorySword::new);
     //永曜锻造模板
-    public static final RegistryObject<Item> GLORYMODEL=
-            ITEMS.register("glorymodel", ()->new Item((new Item.Properties()).rarity(Rarity.UNCOMMON).fireResistant()));
+    private static final ResourceLocation GLORYPATTERN = new ResourceLocation(MahjongParlor.MOD_ID, "glorypattern");
 
+    public static final RegistryObject<Item> GLORYMODEL = ITEMS.register("glorymodel",
+            () -> ModSmithingTemplates.createForSmithingTransform(
+                    new ResourceLocation("mahjongparlor", "glorymodel"),           // 注意：这里用 mahjongparlor（根据你实际 modid）
+                    new ResourceLocation("minecraft", "netherite_sword"),
+                    new ResourceLocation("mahjongparlor", "eternalglory"),
+                    new ResourceLocation("mahjongparlor", "eternalglorysword")
+            )
+    );
     //增强型脚手架
     public static final RegistryObject<Item> ENHANCED_SCAFFOLDING_ITEM = ITEMS.register("enhanced_scaffolding",
             () -> new EnhancedScaffoldingBlockItem(
@@ -56,6 +64,8 @@ public class ModItems {
     //地瓜
     public static final RegistryObject<Item>  PACHYRHIZUS =
             ITEMS.register("pachyrhizus",() -> new Item(new Item.Properties().stacksTo(64).food(stew(2).build())));
+    public static final RegistryObject<Item>  COOKEDPACHYRHIZUS =
+            ITEMS.register("cookedpachyrhizus",() -> new Item(new Item.Properties().stacksTo(64).food(stew(5).build())));
 
     private static FoodProperties.Builder stew(int pNutrition) {
         return (new FoodProperties.Builder()).nutrition(pNutrition).saturationMod(0.6F);
