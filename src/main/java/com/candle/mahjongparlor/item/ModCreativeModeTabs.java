@@ -35,6 +35,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.WATERBOWL.get());
                         pOutput.accept(ModItems.IRONBASIN.get());
                         pOutput.accept(ModItems.CUCUMBER.get());
+                        pOutput.accept(ModItems.BLUEAPPLE.get());
                         pOutput.accept(ModItems.PACHYRHIZUS.get());
                         pOutput.accept(ModItems.COOKEDPACHYRHIZUS.get());
                         pOutput.accept(ModItems.CHICKENSOUP.get());

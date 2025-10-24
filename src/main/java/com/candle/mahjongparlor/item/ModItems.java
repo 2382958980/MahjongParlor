@@ -37,6 +37,8 @@ public class ModItems {
     //麻辣香锅
     public static final RegistryObject<Item> SPICYHOTPOT =
             ITEMS.register("spicyhotpot", () ->new BasinFoodItem(new Item.Properties().stacksTo(1).food(stew(10).effect(() -> new MobEffectInstance(MobEffects.SATURATION, 20, 0), 1.0f).build())));
+    public static final RegistryObject<Item> BLUEAPPLE =
+            ITEMS.register("blueapple", () ->new Item(new Item.Properties().stacksTo(64).food(stew(5).effect(()->new MobEffectInstance(MobEffects.LUCK,18000,0),1.0f).build())));
     //永曜之魂
     public static final RegistryObject<Item> ETERNALGLORY =
             ITEMS.register("eternalglory", ()->new SimpleFoiledItem((new Item.Properties()).rarity(Rarity.EPIC).fireResistant()));
