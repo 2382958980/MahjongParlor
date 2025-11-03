@@ -1,11 +1,14 @@
 package com.candle.mahjongparlor;
 
 import com.candle.mahjongparlor.block.ModBlocks;
+import com.candle.mahjongparlor.entity.projectile.ModEntityTypes;
 import com.candle.mahjongparlor.item.ModCreativeModeTabs;
 import com.candle.mahjongparlor.item.ModItems;
 import com.candle.mahjongparlor.loot.ModLootModifiers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -39,6 +42,7 @@ public class MahjongParlor
         modEventBus.addListener(this::commonSetup);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         // 注册Loot Modifiers
         ModLootModifiers.register(modEventBus);
@@ -84,6 +88,7 @@ public class MahjongParlor
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             // Some client setup code
+            EntityRenderers.register(ModEntityTypes.MAGNETBOMB.get(), ThrownItemRenderer::new);
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
         }

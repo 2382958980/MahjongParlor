@@ -45,6 +45,8 @@ public class ModItems {
    //永曜之刃
     public static final RegistryObject<Item> ETERNALGLORYSWORD =
             ITEMS.register("eternalglorysword", EternalGlorySword::new);
+    public static final RegistryObject<Item> MAGNETBOMB =
+            ITEMS.register("magnetbomb", ()->new MagnetBombItem((new Item.Properties()).stacksTo(3)));
     //永曜锻造模板
     private static final ResourceLocation GLORYPATTERN = new ResourceLocation(MahjongParlor.MOD_ID, "glorypattern");
 
