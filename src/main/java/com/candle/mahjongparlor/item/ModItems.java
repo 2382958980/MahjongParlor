@@ -42,6 +42,8 @@ public class ModItems {
     //永曜之魂
     public static final RegistryObject<Item> ETERNALGLORY =
             ITEMS.register("eternalglory", ()->new SimpleFoiledItem((new Item.Properties()).rarity(Rarity.EPIC).fireResistant()));
+    public static final RegistryObject<Item> AFRICAHEART =
+            ITEMS.register("africaheart", ()->new Item((new Item.Properties()).stacksTo(64).rarity(Rarity.UNCOMMON)));
    //永曜之刃
     public static final RegistryObject<Item> ETERNALGLORYSWORD =
             ITEMS.register("eternalglorysword", EternalGlorySword::new);
