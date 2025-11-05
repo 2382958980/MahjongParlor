@@ -45,6 +45,10 @@ public class ModItems {
    //永曜之刃
     public static final RegistryObject<Item> ETERNALGLORYSWORD =
             ITEMS.register("eternalglorysword", EternalGlorySword::new);
+
+    public static final RegistryObject<Item> HORMONEGUN =
+            ITEMS.register("hormonegun", () ->new HormoneGunItem(new Item.Properties().stacksTo(1)));
+
     public static final RegistryObject<Item> MAGNETBOMB =
             ITEMS.register("magnetbomb", ()->new MagnetBombItem((new Item.Properties()).stacksTo(3)));
     //永曜锻造模板

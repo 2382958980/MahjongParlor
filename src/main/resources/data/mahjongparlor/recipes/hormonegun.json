@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "INI",
+    "GGR",
+    "  B"
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "N": { "item": "minecraft:netherite_ingot" },
+    "G": { "item": "minecraft:ghast_tear" },
+    "R": { "item": "minecraft:redstone_block" },
+    "B": { "item": "minecraft:iron_block" }
+  },
+  "result": {
+    "item": "mahjongparlor:hormonegun",
+    "count": 1
+  }
+}

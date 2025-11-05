@@ -25,6 +25,15 @@ public class ModEntityTypes {
                             .clientTrackingRange(4) // d. 客户端追踪范围
                             .updateInterval(10) // e. 数据同步频率
                             .build("magnet_bomb")); // f. 和注册名保持一致
+    public static final RegistryObject<EntityType<HealBullet>> HEAL_BULLET =
+            ENTITY_TYPES.register("heal_bullet",
+                    () -> EntityType.Builder.<HealBullet>of(HealBullet::new, MobCategory.MISC)
+                            .sized(0.2F, 0.2F)
+                            .clientTrackingRange(64)
+                            .updateInterval(1)
+                            .build("heal_bullet")
+            );
+
 
     // 3. 创建一个方法，由你的主类调用，以将 DeferredRegister 附加到 Mod 事件总线
     public static void register(IEventBus eventBus) {

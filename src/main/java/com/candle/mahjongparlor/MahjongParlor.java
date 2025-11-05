@@ -2,9 +2,12 @@ package com.candle.mahjongparlor;
 
 import com.candle.mahjongparlor.block.ModBlocks;
 import com.candle.mahjongparlor.entity.projectile.ModEntityTypes;
+import com.candle.mahjongparlor.event.HealBulletRenderer;
 import com.candle.mahjongparlor.item.ModCreativeModeTabs;
 import com.candle.mahjongparlor.item.ModItems;
 import com.candle.mahjongparlor.loot.ModLootModifiers;
+
+import com.candle.mahjongparlor.network.ModNetworking;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -37,7 +40,7 @@ public class MahjongParlor
     public MahjongParlor(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
-
+        ModNetworking.register();
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         ModItems.register(modEventBus);
@@ -89,8 +92,8 @@ public class MahjongParlor
         {
             // Some client setup code
             EntityRenderers.register(ModEntityTypes.MAGNETBOMB.get(), ThrownItemRenderer::new);
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            EntityRenderers.register(ModEntityTypes.HEAL_BULLET.get(), HealBulletRenderer::new);
+
         }
     }
 }

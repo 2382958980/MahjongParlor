@@ -41,6 +41,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.CHICKENSOUP.get());
                         pOutput.accept(ModItems.SPICYHOTPOT.get());
                         pOutput.accept(ModItems.MAGNETBOMB.get());
+                        pOutput.accept(ModItems.HORMONEGUN.get());
                     })
                     .build());
 
