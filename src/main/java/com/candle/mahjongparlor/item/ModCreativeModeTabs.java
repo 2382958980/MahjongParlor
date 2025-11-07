@@ -43,6 +43,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.MAGNETBOMB.get());
                         pOutput.accept(ModItems.HORMONEGUN.get());
                         pOutput.accept(ModItems.AFRICAHEART.get());
+                        pOutput.accept(ModItems.REPAIR_CORE.get());
                     })
                     .build());
 

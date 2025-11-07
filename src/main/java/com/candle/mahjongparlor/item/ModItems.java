@@ -50,6 +50,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> HORMONEGUN =
             ITEMS.register("hormonegun", () ->new HormoneGunItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> REPAIR_CORE =
+            ITEMS.register("repair_core", () -> new Repairment(new Item.Properties().stacksTo(64)));
 
     public static final RegistryObject<Item> MAGNETBOMB =
             ITEMS.register("magnetbomb", ()->new MagnetBombItem((new Item.Properties()).stacksTo(3)));

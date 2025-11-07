@@ -8,6 +8,7 @@ import com.candle.mahjongparlor.item.ModItems;
 import com.candle.mahjongparlor.loot.ModLootModifiers;
 
 import com.candle.mahjongparlor.network.ModNetworking;
+import com.candle.mahjongparlor.recipe.ModRecipes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -41,9 +42,10 @@ public class MahjongParlor
     {
         IEventBus modEventBus = context.getModEventBus();
         ModNetworking.register();
-        // Register the commonSetup method for modloading
+
         modEventBus.addListener(this::commonSetup);
         ModItems.register(modEventBus);
+        ModRecipes.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEntityTypes.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
