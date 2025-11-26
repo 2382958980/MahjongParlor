@@ -47,7 +47,12 @@ public class ModItems {
    //永曜之刃
     public static final RegistryObject<Item> ETERNALGLORYSWORD =
             ITEMS.register("eternalglorysword", EternalGlorySword::new);
-
+    //冰镰刀
+    public static final RegistryObject<Item> FrostedSickle =
+            ITEMS.register("frostedsickle", FrostedSickle::new);
+    //wan
+    public static final RegistryObject<Item> WAN =
+            ITEMS.register("wan", () ->new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> HORMONEGUN =
             ITEMS.register("hormonegun", () ->new HormoneGunItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> REPAIR_CORE =
