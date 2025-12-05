@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    "SSS",
+    " N "
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:leather"
+    },
+    "S": {
+      "item": "mahjongparlor:antibullet"
+    }
+  },
+  "result": {
+    "item": "mahjongparlor:repair_core",
+    "count": 1
+  }
+}

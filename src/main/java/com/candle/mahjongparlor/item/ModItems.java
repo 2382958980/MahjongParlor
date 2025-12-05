@@ -34,6 +34,8 @@ public class ModItems {
     //铁盆
     public static final RegistryObject<Item> IRONBASIN =
             ITEMS.register("ironbasin", () ->new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> ANTIBULLET =
+            ITEMS.register("antibullet", () ->new Item(new Item.Properties().stacksTo(64)));
     //麻辣香锅
     public static final RegistryObject<Item> SPICYHOTPOT =
             ITEMS.register("spicyhotpot", () ->new BasinFoodItem(new Item.Properties().stacksTo(1).food(stew(10).effect(() -> new MobEffectInstance(MobEffects.SATURATION, 20, 0), 1.0f).build())));

@@ -44,6 +44,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.HORMONEGUN.get());
                         pOutput.accept(ModItems.AFRICAHEART.get());
                         pOutput.accept(ModItems.REPAIR_CORE.get());
+                        pOutput.accept(ModItems.ANTIBULLET.get());
                         pOutput.accept(ModItems.FrostedSickle.get());
                         pOutput.accept(ModItems.WAN.get());
                     })

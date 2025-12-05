@@ -1,6 +1,7 @@
 package com.candle.mahjongparlor;
 
 import com.candle.mahjongparlor.block.ModBlocks;
+import com.candle.mahjongparlor.client.renderer.SwordBeamRenderer;
 import com.candle.mahjongparlor.entity.projectile.ModEntityTypes;
 import com.candle.mahjongparlor.event.HealBulletRenderer;
 import com.candle.mahjongparlor.item.ModCreativeModeTabs;
@@ -16,6 +17,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -95,6 +97,7 @@ public class MahjongParlor
             // Some client setup code
             EntityRenderers.register(ModEntityTypes.MAGNETBOMB.get(), ThrownItemRenderer::new);
             EntityRenderers.register(ModEntityTypes.HEAL_BULLET.get(), HealBulletRenderer::new);
+            EntityRenderers.register(ModEntityTypes.SWORD_BEAM.get(), SwordBeamRenderer::new);
 
         }
     }

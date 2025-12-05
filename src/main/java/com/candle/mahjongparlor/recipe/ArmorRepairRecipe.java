@@ -76,8 +76,8 @@ public class ArmorRepairRecipe extends CustomRecipe {
         // 当前生效的最大耐久（向下取整），并做最小保护
         int currentMax = (int) Math.max(MIN_EFFECTIVE_MAX, Math.floor(baseMax * multiplier));
 
-        // === 1) 修复当前耐久：修复量 = 当前生效最大耐久的 30%（向上取整） ===
-        int repairAmount = (int) Math.ceil(currentMax * 0.30);
+        // === 1) 修复当前耐久：修复量 = 当前生效最大耐久的 35%（向上取整） ===
+        int repairAmount = (int) Math.ceil(currentMax * 0.35);
         int currentDamage = armorCopy.getDamageValue();
         int newDamage = Math.max(0, currentDamage - repairAmount);
 

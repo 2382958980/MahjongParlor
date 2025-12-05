@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NS",
+    "SN"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "minecraft:brick"
+    }
+  },
+  "result": {
+    "item": "mahjongparlor:antibullet",
+    "count": 2
+  }
+}
