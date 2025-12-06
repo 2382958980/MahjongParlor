@@ -1,6 +1,30 @@
 {
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "mahjongparlor:item/frostedsickle"
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "mahjongparlor:item/frostedsickle1"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "mahjongparlor:item/frostedsickle1"
+    },
+    "fixed": {
+      "parent": "mahjongparlor:item/frostedsickle1"
+    },
+
+    "ground": {
+      "parent": "mahjongparlor:item/frostedsickle2"
+    },
+    "thirdperson_righthand": {
+      "parent": "mahjongparlor:item/frostedsickle2"
+    },
+    "thirdperson_lefthand": {
+      "parent": "mahjongparlor:item/frostedsickle2"
+    },
+    "firstperson_righthand": {
+      "parent": "mahjongparlor:item/frostedsickle2"
+    },
+    "firstperson_lefthand": {
+      "parent": "mahjongparlor:item/frostedsickle2"
+    }
   }
 }
